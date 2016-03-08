@@ -1,0 +1,27 @@
+<script>
+    //100 bottles of beer on the wall
+    // 99 bottles of beer on the wall
+    var forBottles = function(){
+        // first statement: where the loop starts, where the initiates--var count = 100
+        // Second statement: where we exit the loop. when the boolean evaluates to false 
+        for (var count = 100; count > -1; count--){
+            if (count === 0)
+            {
+                console.log("There are no more bottles of beer on the wall");
+            } 
+            else 
+            {
+            console.log ("there are" + count + "bottles of beer on the wall");
+            }
+        }
+    }
+    
+    var whileBottles = function(){
+        var count = 100
+        while (count > -1){
+            if (count === 0){
+                console.log("there are no more bottles of beer on the wall")
+            }
+        }
+    };
+</script>
