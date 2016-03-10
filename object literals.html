@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+
+		<title>Object Literals in JS</title>
+
+		<script>
+			var count = 0;
+			var TorchStats = {
+				age: 19,
+				firstName: "Torch",
+				lastName: "Toes",
+				hobby: "raging",
+				secret: function() {
+					if (count < 3) {
+						console.log("You wot mate");
+					} else {
+						console.log("I cont believe u done tis");
+					}
+					count++;
+				},
+                ageMe: function() {
+                    this.age = this.age + 16;
+                }
+			}
+			var whoAmI = function() {
+				alert("Torch's age is " + TorchStats.age);
+				alert("Torch's full name is " + TorchStats.firstName + " " + TorchStats.lastName);
+				alert("Torch likes to " + TorchStats.hobby);
+			}
+			var secret = function() {
+				var text = document.getElementById("changeMe");
+				if (count === 0) {
+					text.style.color = "lime";
+					text.style.fontSize = 50;
+					text.innerHTML = "CLASSIFIED";
+					document.getElementsByTagName("body")[0].style.backgroundColor = "black";
+				}
+				TorchStats.secret();
+				if (count > 3) {
+					text.innerHTML = "...somewhere?";
+				}
+                TorchStats.ageMe();
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<button type="button" onclick="whoAmI()">Who is Torch?</button>
+		<button type="button" onclick="secret()">Torch's secret is...</button>
+		<p id = "changeMe"></p>
+	</body>
+
+</html>
